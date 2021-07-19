@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Plantas : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public string resposta;
+    public Animator animator;
+
+    
     void Start()
     {
         
@@ -15,4 +18,12 @@ public class Plantas : MonoBehaviour
     {
         
     }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("pocao")){
+            animator.SetTrigger("colidiu");
+        }
+    }
 }
+
