@@ -15,6 +15,9 @@ public class ArrowController : MonoBehaviour
     Vector3 screenPoint;
     Vector3 offset;
     float angle;
+
+    public GameObject pocao;
+    public Transform spawnpocao;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +27,11 @@ public class ArrowController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        mira();
+        atirar();
+    }
+
+    void mira(){
         mousePos = Input.mousePosition;
         screenPoint = Camera.main.WorldToScreenPoint(transform.position);
         offset = new Vector2(mousePos.x - screenPoint.x, mousePos.y - screenPoint.y);
@@ -31,5 +39,14 @@ public class ArrowController : MonoBehaviour
         angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
 
         transform.rotation = Quaternion.Euler(0,0,angle);
+
     }
+
+    void atirar(){
+
+        if(Input.GetButtonDown("Fire1")){
+            Instantiate(pocao, spawnpocao.position, transform.rotation);
+        }
+    }
+
 }
