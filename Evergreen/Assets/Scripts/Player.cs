@@ -37,4 +37,8 @@ public class Player : MonoBehaviour
     {
         playerRb.MovePosition(playerRb.position + movimento.normalized * speed * Time.fixedDeltaTime);
     }
+    /*void OnTriggerEnter2D(Collider2D other)
+    {
+        speed = 0;
+    }*/
 }

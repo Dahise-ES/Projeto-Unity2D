@@ -43,6 +43,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: New Layer
+  - name: cenario
+    uniqueID: 4124715577
+    locked: 0
+  - name: player
     uniqueID: 2013547413
     locked: 0
