@@ -6,11 +6,12 @@ public class Plantas : MonoBehaviour
 {
     public string resposta;
     public Animator animator;
+    AudioSource som;
 
     
     void Start()
     {
-        
+        som = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -23,6 +24,7 @@ public class Plantas : MonoBehaviour
     {
         if(collision.CompareTag("pocao")){
             animator.SetTrigger("colidiu");
+            som.Play();
         }
     }
 }

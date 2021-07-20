@@ -1,3 +1,4 @@
+//using System.Threading.Tasks.Dataflow;
 using System.Threading;
 //using System.Numerics;
 //using System.Threading.Tasks.Dataflow;
@@ -8,6 +9,7 @@ using UnityEngine;
 public class Pocao : MonoBehaviour
 {
     [SerializeField] float speed;
+    [SerializeField] ParticleSystem efeito;
     // Update is called once per frame
     void Update()
     {
@@ -16,6 +18,7 @@ public class Pocao : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        Instantiate(efeito, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 }

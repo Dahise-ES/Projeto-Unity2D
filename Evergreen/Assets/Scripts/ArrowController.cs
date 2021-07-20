@@ -1,3 +1,4 @@
+using System.Xml.Serialization;
 using System.Transactions;
 using System.Runtime.InteropServices;
 using System;
@@ -18,10 +19,11 @@ public class ArrowController : MonoBehaviour
 
     public GameObject pocao;
     public Transform spawnpocao;
+    AudioSource som;
     // Start is called before the first frame update
     void Start()
     {
-        
+        som = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -46,6 +48,7 @@ public class ArrowController : MonoBehaviour
 
         if(Input.GetButtonDown("Fire1")){
             Instantiate(pocao, spawnpocao.position, transform.rotation);
+            som.Play();
         }
     }
 
