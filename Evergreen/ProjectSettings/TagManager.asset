@@ -6,6 +6,7 @@ TagManager:
   tags:
   - pocao
   - plantas
+  - effect
   layers:
   - Default
   - TransparentFX
@@ -13,7 +14,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Player
   - 
   - 
   - 
@@ -46,6 +47,12 @@ TagManager:
   - name: cenario
     uniqueID: 4124715577
     locked: 0
+  - name: inimigos
+    uniqueID: 838388827
+    locked: 0
   - name: player
     uniqueID: 2013547413
+    locked: 0
+  - name: effect
+    uniqueID: 1293769483
     locked: 0

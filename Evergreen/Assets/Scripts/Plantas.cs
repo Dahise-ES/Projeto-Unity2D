@@ -7,11 +7,15 @@ public class Plantas : MonoBehaviour
     public string resposta;
     public Animator animator;
     AudioSource som;
-
+    public Pontuacao scoreController;
+    private bool atingido = false;
     
+
+
     void Start()
     {
         som = GetComponent<AudioSource>();
+        scoreController = FindObjectOfType<Pontuacao>();
     }
 
     // Update is called once per frame
@@ -25,6 +29,12 @@ public class Plantas : MonoBehaviour
         if(collision.CompareTag("pocao")){
             animator.SetTrigger("colidiu");
             som.Play();
+            if (!atingido)
+            {
+                atingido = true;
+                scoreController.adicionarPonto();
+
+            }
         }
     }
 }
